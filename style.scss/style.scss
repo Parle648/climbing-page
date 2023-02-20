@@ -6,7 +6,7 @@
 }
 
 body{
-    font-family: "Roboto Mono";
+    font-family: "Open Sans";
     overflow-x: hidden;
 }
 
@@ -18,7 +18,6 @@ body{
     background-color: #F5F5F5;
     padding: 16px 0px 12px;
     .wrapper{
-        width: 1280px;
         margin: 0 auto;
         display: flex;
         justify-content: end;
@@ -29,9 +28,7 @@ body{
     &__img {
         margin-left: 5px;
         height: 24px;
-        &:hover{
-            cursor: pointer;
-        }
+        @include hover;
     }
 }
 .user-location {
@@ -59,15 +56,10 @@ header .wrapper{
     justify-content: space-between;
 }
 .header {
-
-    &__img-logo {
-    }
-
     &__map-pin {
         margin-right: 6px;
         margin-top: 6px;
     }
-
     &__location-paragraph{
         width: 227px;
         font-size: 14px;
@@ -154,19 +146,32 @@ header .wrapper{
         font-size: 15px;
         font-weight: 500;
         line-height: 18px;
-        &:hover{
-            cursor: pointer;
-        }
+        @include hover;
     }
     
     &__trigger-arrow {
         margin-left: 10px;
+        transition: .5s;
+        width: 12px;
+    }
+    &__trigger-arrow_active{
+        transform: rotate(180deg);
+    }
+    &__inner-list {
+        height: 0;
+        opacity: 0;
+        position: absolute;
+    }
+    &__inner-list_active{
+        height: auto;
+        opacity: 1;
+    }
+    &__inner-item {
+        padding: 10px 10px 15px 0px;
     }
     &__search-img{
         margin-left: 3px;
-        &:hover{
-            cursor: pointer;
-        }
+        @include hover;
     }
 }
 .main-description{
@@ -180,9 +185,6 @@ header .wrapper{
     right: -84px;
 }
 .description {
-    &__text {
-    }
-    
     &__ttl {
         padding-top: 146px;
         margin-bottom: 22px;
@@ -192,9 +194,7 @@ header .wrapper{
         font-size: 51px;
         font-weight: 400;
         line-height: 63px;
-        font-family: 'Open Sans';
     }
-
     &__subttl {
         color: $dark;
         position: relative;
@@ -205,7 +205,6 @@ header .wrapper{
         letter-spacing: 0.02em;
         margin-bottom: 30px;
     }
-
     &__btn {
         background-color: $yellow;
         border: 0px;
@@ -227,7 +226,6 @@ header .wrapper{
     &__ttl {
         width: 201px;
         text-align: center;
-        font-family: 'Open Sans';
         font-size: 20px;
         font-weight: 600;
         line-height: 25px;
@@ -236,7 +234,6 @@ header .wrapper{
         margin: 0 auto 30px;
     }
     &__area-ttl {
-        font-family: 'Open Sans';
         font-size: 15px;
         font-weight: 500;
         color: $dark;
@@ -251,7 +248,6 @@ header .wrapper{
     }
     
     &__offer-type {
-        font-family: 'Open Sans';
         font-size: 13px;
         font-weight: 400;
         line-height: 17px;
@@ -267,7 +263,6 @@ header .wrapper{
     }
     
     &__location {
-        font-family: 'Open Sans';
         font-size: 13px;
         font-weight: 400;
         line-height: 17px;
@@ -291,7 +286,6 @@ header .wrapper{
     }
 
     &__cost-ttl {
-        font-family: 'Open Sans';
         font-size: 15px;
         font-weight: 600;
         line-height: 19px;
@@ -299,7 +293,6 @@ header .wrapper{
     }
 
     &__cost-result {
-        font-family: 'Open Sans';
         font-size: 15px;
         font-weight: 600;
         line-height: 19px;
@@ -316,7 +309,6 @@ header .wrapper{
     &__phone {
         width: 162px;
         border: 0px;
-        font-family: 'Open Sans';
         font-size: 13px;
         font-weight: 400;
         line-height: 17px;
@@ -350,9 +342,12 @@ header .wrapper{
     border-radius: 21px;
     background-color: #F0F0F0;
     display: flex;
+    position: relative;
     align-items: center;
     &__choose-block {
         background-color: $yellow;
+        height: 5px;
+        position: relative;
     }
 
     &__target {
@@ -360,11 +355,11 @@ header .wrapper{
         border-radius: 50%;
         width: 18px;
         height: 18px;
+        position: absolute;
         @include hover;
     }
 
     &__area-result {
-        font-family: 'Open Sans';
         font-size: 15px;
         font-weight: 500;
         color: $dark;
@@ -374,7 +369,3 @@ header .wrapper{
         width: 59px;
     }
 }
-.calc {
-
-}
-

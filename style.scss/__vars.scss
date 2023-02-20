@@ -2,6 +2,10 @@ $yellow: #FEA803;
 $dark: #1A1A1A;
 $grey: #A4A4A4;
 
+ul{
+    list-style-type: none;
+}
+
 @mixin forLink {
     color: #1A1A1A;
 }

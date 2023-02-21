@@ -221,6 +221,7 @@ header .wrapper{
     position: relative;
     margin-top: 66px;
     margin-right: 24px;
+    margin-bottom: 190px;
 }
 .calcul {
     &__ttl {
@@ -368,4 +369,173 @@ header .wrapper{
         border: 1px solid $grey;
         width: 59px;
     }
+}
+
+.faq-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 200px;
+}
+.faq {
+    &__ttl {
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 39px;
+        color: $dark;
+        text-align: start;
+        display: inline;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        width: 700px;
+    }
+
+    &__question {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 23px;
+        color: $dark;
+        width: 521px;
+        margin-bottom: 30px;
+    }
+
+    &__answer {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 19px;
+        color: $grey;
+        width: 629px;
+        height: 0;
+        opacity: 0;
+        transition: .3s;
+        padding-top: 30px;
+    }
+    &__answer_active{
+        height: 57px;
+        opacity: 1;
+    }
+
+    &__arrow-border {
+        border: 1.5px solid $dark;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        @include hover;
+    }
+    &__arrow-border_active{
+        border-color: $yellow
+    }
+
+    &__arrow {
+        border-left: 1.4px solid $dark;
+        border-top: 1.4px solid $dark;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-135deg);
+        transition-duration: .3s;
+    }
+    &__arrow_active{
+        left: 51%;
+        top: 54%;
+        border-color: $yellow;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+.done-slider-container {
+    position: relative;
+}
+.done-slider-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+.done-slider-inner-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 53px;
+    animation-duration: .3s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.done-slider-inner-wrapper_active{
+    animation-name: anim;
+}
+.done-slider-inner-wrapper_active-left{
+    animation-name: anim-left;
+}
+@keyframes anim{
+    0%{
+    }
+    100%{
+        margin-left: -430px;
+    }
+}
+@keyframes anim-left{
+    0%{
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+
+.done-slider {
+    &__ttl{
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 39px;
+        color: $dark;
+        margin-bottom: 50px;
+    }
+    &__arrow{
+        @include hover;
+    }
+    &__arrow:last-child {
+        margin-left: 22px;
+        transform: rotate(180deg);
+    }
+    &__btns {
+        width: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 17px;
+    }
+    &__cart {
+        width: 414px;
+        margin-right: 20px;
+    }
+    &__img {
+        height: 230px;
+    }
+    &__inner-ttl {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 23px;
+        color: $dark;
+    }
+}
+.done-btn{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    background-color: $dark;
+    border: 0px;
+    padding: 20px 63px 21px;
+    display: flex;
+    margin: 0 auto;
+    @include hover;
 }

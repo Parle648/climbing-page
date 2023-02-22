@@ -39,7 +39,14 @@ sliderTarget.addEventListener('mousedown', function(){
     document.addEventListener('mouseup', function(){
         document.removeEventListener('mousemove', movesliderTarget)
     })
-})    
+}) 
+
+const offersSlider = document.querySelector('.services-menu'),
+      offerItems = document.querySelectorAll('.services-menu__link')
+
+
+
+
 
 const rightTarget = document.querySelector('.done-slider_arrow-right'),
       leftTarget = document.querySelector('.done-slider_arrow-left'),
